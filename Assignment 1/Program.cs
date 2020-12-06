@@ -7,6 +7,17 @@ namespace Assignment_1
     {
         static void Main()
         {
+            IProperty property1 = new Apartment(1, "title", "address", 2);
+            IProperty property2 = new Land(null);
+
+            var properties = new List<IProperty> { property1, property2 };
+
+            foreach (var item in properties)
+            {
+                item.Print();
+            }
+            
+
             PList plist = new PList();
             List<Buyer> buyers = new List<Buyer>();
             plist.PropertyBought += OnPropertyBought;
@@ -38,13 +49,15 @@ namespace Assignment_1
                 var buyer = new Buyer(buyerDetails, i + 1);
                 buyers.Add(buyer);
             }
+
+
+            // Print
             foreach (var property in plist.p_list)
             {
 
-                Console.WriteLine(
-                    $"Type: {property.propertyType}, Id: {property.Id}, Title: {property.Title}"
-                    );
+                Console.WriteLine(property.Print());
             }
+
             Console.WriteLine("");
             foreach (var property in plist.p_list)
             {

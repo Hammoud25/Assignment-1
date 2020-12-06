@@ -6,10 +6,10 @@ namespace Assignment_1
 {
     class Land : Property
     {
-        public override int Id { get; set; }
-        public override string Title { get; set; }
-        public override int Price { get; set; }
-        public override string Address { get; set; }
+        //public override int Id { get; set; }
+        //public override string Title { get; set; }
+        //public override int Price { get; set; }
+        //public override string Address { get; set; }
         public int Area { get; set; }
         public bool CanHarvest { get; set; }
 
